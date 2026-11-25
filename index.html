@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Lakshmi Gopi Reddy Bhuthukuri | Data Analyst</title>
+<meta name="description" content="Portfolio of Lakshmi Gopi Reddy Bhuthukuri, a data analyst fresher skilled in SQL, Python, Excel and Power BI.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500;700;800&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+
+<style>
+/* ============ TOKENS ============ */
+:root{
+  --ink:#14213d;
+  --ink-soft:#4a5875;
+  --paper:#f2f5f9;
+  --card:#ffffff;
+  --line:#d9e0ea;
+  --brand:#19416e;
+  --signal:#e8a33d;
+  --teal:#1f8a8a;
+  --radius:14px;
+  --head:"Bricolage Grotesque","Segoe UI",system-ui,sans-serif;
+  --body:"IBM Plex Sans","Segoe UI",system-ui,sans-serif;
+}
+
+/* ============ BASE ============ */
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:72px}
+body{font-family:var(--body);color:var(--ink);background:var(--paper);line-height:1.65;font-size:17px}
+a{color:var(--brand)}
+a:focus-visible,button:focus-visible{outline:3px solid var(--signal);outline-offset:3px}
+.wrap{max-width:1040px;margin:0 auto;padding:0 24px}
+section{padding:72px 0}
+h1,h2,h3{font-family:var(--head);line-height:1.15;color:var(--ink)}
+h2{font-size:clamp(1.7rem,4vw,2.3rem);margin-bottom:28px;font-weight:800}
+h3{font-size:1.2rem;font-weight:700}
+p{max-width:68ch}
+
+/* ============ NAV ============ */
+header.nav{position:sticky;top:0;z-index:10;background:rgba(242,245,249,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+.nav .wrap{display:flex;align-items:center;justify-content:space-between;height:60px}
+.brand{font-family:var(--head);font-weight:800;text-decoration:none;color:var(--ink)}
+.nav ul{display:flex;gap:22px;list-style:none}
+.nav ul a{text-decoration:none;color:var(--ink-soft);font-weight:500;font-size:.95rem}
+.nav ul a:hover{color:var(--brand)}
+
+/* ============ HERO ============ */
+.hero{padding:64px 0 48px}
+.hero .wrap{display:grid;grid-template-columns:1.4fr 1fr;gap:48px;align-items:center}
+.hero h1{font-size:clamp(2.2rem,6vw,3.7rem);font-weight:800;letter-spacing:-.02em;margin-bottom:14px}
+.role{font-weight:600;color:var(--teal);margin-bottom:16px}
+.hero p.lead{color:var(--ink-soft);margin-bottom:26px}
+.btns{display:flex;flex-wrap:wrap;gap:12px}
+.btn{display:inline-block;padding:12px 22px;border-radius:999px;font-weight:600;text-decoration:none;border:2px solid var(--brand)}
+.btn.primary{background:var(--brand);color:#fff}
+.btn.primary:hover{background:var(--ink);border-color:var(--ink)}
+.btn.ghost{color:var(--brand)}
+.btn.ghost:hover{background:var(--brand);color:#fff}
+.photo{position:relative;justify-self:center}
+.photo img{width:min(320px,70vw);aspect-ratio:4/5;object-fit:cover;object-position:top;border-radius:var(--radius);display:block;border:6px solid var(--card);box-shadow:0 0 0 2px var(--line)}
+.photo::before{content:"";position:absolute;inset:18px -18px -18px 18px;border-radius:var(--radius);background:var(--signal);z-index:-1}
+
+/* ============ KPI STRIP ============ */
+.kpis{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:48px}
+.kpi{background:var(--card);border:1px solid var(--line);border-left:5px solid var(--signal);border-radius:10px;padding:16px 18px}
+.kpi b{display:block;font-family:var(--head);font-size:1.9rem;color:var(--brand);line-height:1.1}
+.kpi span{font-size:.88rem;color:var(--ink-soft)}
+
+/* ============ SKILLS ============ */
+.skill-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:18px}
+.panel{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:22px}
+.panel h3{margin-bottom:12px;color:var(--brand)}
+.chips{display:flex;flex-wrap:wrap;gap:8px;list-style:none}
+.chips li{background:var(--paper);border:1px solid var(--line);padding:4px 12px;border-radius:999px;font-size:.9rem;font-weight:500}
+
+/* ============ TIMELINE (experience + education) ============ */
+.timeline{border-left:3px solid var(--line);padding-left:26px;display:grid;gap:30px}
+.entry{position:relative}
+.entry::before{content:"";position:absolute;left:-36px;top:7px;width:13px;height:13px;border-radius:50%;background:var(--signal);border:3px solid var(--paper);box-shadow:0 0 0 2px var(--signal)}
+.entry .when{font-size:.9rem;font-weight:600;color:var(--teal)}
+.entry .where{color:var(--ink-soft);margin-bottom:8px}
+.entry ul{padding-left:20px;color:var(--ink-soft)}
+.entry li{margin-bottom:4px}
+
+/* ============ PROJECTS ============ */
+.projects{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:22px}
+.project{display:flex;flex-direction:column;gap:12px}
+.project .domain{font-weight:600;color:var(--teal);font-size:.95rem}
+.project ul{padding-left:20px;color:var(--ink-soft)}
+.project li{margin-bottom:6px}
+.tools{margin-top:auto;padding-top:14px;border-top:1px dashed var(--line)}
+.project .tools ul{padding-left:0}
+
+/* ============ CONTACT ============ */
+.contact{background:var(--ink);color:#fff}
+.contact h2{color:#fff}
+.contact p{color:#c9d3e6;margin-bottom:22px}
+.contact a.btn{color:#fff;border-color:#fff}
+.contact a.btn:hover{background:var(--signal);border-color:var(--signal);color:var(--ink)}
+.contact .btn.primary{background:var(--signal);border-color:var(--signal);color:var(--ink)}
+.contact .btn.primary:hover{background:#fff;border-color:#fff}
+footer{background:var(--ink);color:#8e9bb8;text-align:center;padding:0 0 28px;font-size:.88rem}
+
+/* ============ RESPONSIVE ============ */
+@media (max-width:820px){
+  .hero .wrap{grid-template-columns:1fr}
+  .photo{order:-1;margin:0 0 18px 18px;justify-self:start}
+  .kpis{grid-template-columns:repeat(2,1fr)}
+  .nav ul{gap:14px}
+  .nav ul li:nth-child(n+4){display:none}
+}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style>
+</head>
+
+<body>
+
+<!-- ============ NAV ============ -->
+<header class="nav">
+  <div class="wrap">
+    <a class="brand" href="#top">Gopi Reddy</a>
+    <nav aria-label="Main">
+      <ul>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#education">Education</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+
+<!-- ============ HERO ============ -->
+<section class="hero">
+  <div class="wrap">
+    <div>
+      <h1>Lakshmi Gopi Reddy Bhuthukuri</h1>
+      <p class="role">Data Analyst (Fresher)</p>
+      <p class="lead">I hold a B.Tech in Computer Science and Engineering and work with SQL, Python, Excel and Power BI. I clean data, explore it, and turn it into dashboards that support business decisions.</p>
+      <div class="btns">
+        <a class="btn primary" href="#projects">View projects</a>
+        <a class="btn ghost" href="#contact">Contact me</a>
+      </div>
+    </div>
+    <div class="photo">
+      <img src="WhatsApp Image 2026-11-13 at 10.51.25 PM.jpeg" alt="Portrait of Lakshmi Gopi Reddy Bhuthukuri in a navy suit">
+    </div>
+  </div>
+
+  <div class="wrap">
+    <div class="kpis" style="grid-column:1/-1;width:100%">
+      <div class="kpi"><b>31,047</b><span>Sales records analysed</span></div>
+      <div class="kpi"><b>8.62</b><span>B.Tech CGPA (out of 10)</span></div>
+      <div class="kpi"><b>2</b><span>Projects built</span></div>
+      <div class="kpi"><b>3 mo</b><span>Data analyst internship</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SKILLS ============ -->
+<section id="skills">
+  <div class="wrap">
+    <h2>Technical skills</h2>
+    <div class="skill-grid">
+      <div class="panel"><h3>Programming and database</h3>
+        <ul class="chips"><li>Python</li><li>SQL</li><li>MySQL</li></ul></div>
+      <div class="panel"><h3>Data analysis</h3>
+        <ul class="chips"><li>Pandas</li><li>NumPy</li><li>Exploratory Data Analysis</li><li>Statistical Analysis</li><li>Trend Analysis</li></ul></div>
+      <div class="panel"><h3>Visualization</h3>
+        <ul class="chips"><li>Power BI</li><li>Excel</li><li>Matplotlib</li><li>Seaborn</li></ul></div>
+      <div class="panel"><h3>Power BI</h3>
+        <ul class="chips"><li>Power Query</li><li>DAX</li><li>Dashboard Development</li></ul></div>
+      <div class="panel"><h3>Excel</h3>
+        <ul class="chips"><li>Pivot Tables</li><li>VLOOKUP</li><li>XLOOKUP</li><li>Charts</li><li>Power Query</li></ul></div>
+      <div class="panel"><h3>Core skills</h3>
+        <ul class="chips"><li>Data Cleaning</li><li>Data Transformation</li><li>Reporting</li></ul></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ EXPERIENCE ============ -->
+<section id="experience">
+  <div class="wrap">
+    <h2>Internship experience</h2>
+    <div class="timeline">
+      <div class="entry">
+        <div class="when">May 2026 – July 2026</div>
+        <h3>Data Analyst Intern</h3>
+        <div class="where">Bluestock Fintech</div>
+        <ul>
+          <li>Gained practical exposure to data analytics and reporting activities.</li>
+          <li>Developed analytical thinking and problem-solving skills during internship activities.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PROJECTS ============ -->
+<section id="projects">
+  <div class="wrap">
+    <h2>Projects</h2>
+    <div class="projects">
+
+      <article class="panel project">
+        <h3>Ashok Store: Sales Analysis and Interactive Dashboard</h3>
+        <div class="domain">Data Analytics and Business Intelligence</div>
+        <ul>
+          <li>Built an interactive Excel dashboard to analyse sales performance across 31,047 transaction records.</li>
+          <li>Cleaned, preprocessed and validated the data to improve quality and consistency.</li>
+          <li>Analysed trends by month, customer demographics, product category, order status and sales channel.</li>
+          <li>Created Pivot Tables, Pivot Charts and KPI cards to track key business indicators.</li>
+          <li>Added slicers for dynamic filtering and data-driven insights.</li>
+        </ul>
+        <div class="tools"><ul class="chips"><li>Excel</li><li>Pivot Tables</li><li>Pivot Charts</li><li>Formulas</li><li>Slicers</li><li>KPI Cards</li></ul></div>
+      </article>
+
+      <article class="panel project">
+        <h3>End-to-End Cognitive Deep Learning System for Dermatological Anomaly Profiling</h3>
+        <div class="domain">Artificial Intelligence and Deep Learning</div>
+        <ul>
+          <li>Developed a deep learning system for automated skin image classification.</li>
+          <li>Applied CNN and Vision Transformer (ViT) models with image preprocessing and augmentation.</li>
+          <li>Used Grad-CAM for visual interpretation and evaluated performance with standard metrics.</li>
+        </ul>
+        <div class="tools"><ul class="chips"><li>Python</li><li>CNN</li><li>ViT</li><li>OpenCV</li><li>NumPy</li><li>Pandas</li><li>Grad-CAM</li><li>Gemini API</li><li>Google Colab</li></ul></div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============ EDUCATION ============ -->
+<section id="education">
+  <div class="wrap">
+    <h2>Education</h2>
+    <div class="timeline">
+      <div class="entry">
+        <div class="when">2022 – 2026</div>
+        <h3>B.Tech in Computer Science and Engineering</h3>
+        <div class="where">Bharath University, Chennai · CGPA 8.62/10</div>
+      </div>
+      <div class="entry">
+        <div class="when">2020 – 2022</div>
+        <h3>Intermediate, A.P. Board (M.P.C.)</h3>
+        <div class="where">Future Focus Junior College, Guntur · CGPA 8.77/10</div>
+      </div>
+      <div class="entry">
+        <div class="when">2019 – 2020</div>
+        <h3>10th Standard, A.P. Board</h3>
+        <div class="where">Vision High School, Sattenpalle · CGPA 9.46/10</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CERTIFICATIONS ============ -->
+<section id="certifications" style="padding-top:0">
+  <div class="wrap">
+    <h2>Certifications</h2>
+    <div class="skill-grid">
+      <div class="panel"><h3>Data Analyst Internship Certificate</h3><p>Bluestock Fintech, May – July 2026</p></div>
+      <div class="panel"><h3>Introduction to Internet of Things (IoT)</h3><p>NPTEL, IIT Kharagpur, January – April 2025</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CONTACT ============ -->
+<section id="contact" class="contact">
+  <div class="wrap">
+    <h2>Let's work together</h2>
+    <p>I am looking for a data analyst role where I can turn raw data into clear insights. Based in Palnadu, Andhra Pradesh, India.</p>
+    <div class="btns">
+      <a class="btn primary" href="mailto:gopi202003@gmail.com">Email me</a>
+      <a class="btn" href="tel:+919063793106">+91 90637 93106</a>
+      <a class="btn" href="https://www.linkedin.com/in/bhuthukuri-lakshmi-gopi-reddy-9a6640281/" target="_blank" rel="noopener">LinkedIn</a>
+      <a class="btn" href="https://github.com/BHUTHUKI" target="_blank" rel="noopener">GitHub</a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>© 2026 Lakshmi Gopi Reddy Bhuthukuri</footer>
+
+</body>
+</html>
